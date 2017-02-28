@@ -19,6 +19,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '../build')
   },
+  devtool: 'cheap-module-source-map',
   module: {
     loaders: [
       {
