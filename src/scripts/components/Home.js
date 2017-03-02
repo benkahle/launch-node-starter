@@ -1,5 +1,5 @@
 import React from 'react'
-require("../../styles/base.scss");
+require("../../styles/home.scss");
 
 const Home = () => (
   <div className="container">

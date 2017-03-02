@@ -1,0 +1,22 @@
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+button {
+  font-size: 20px;
+
+  &.increment {
+    color: blue;
+  }
+  &.decrement {
+    color: red;
+  }
+}

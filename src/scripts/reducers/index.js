@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import { FOOBAR } from "../actions"
+import { SET_COUNTER_VALUE } from "../actions"
 
-const base = (state = {}, action) => {
+const counterValue = (state = 0, action) => {
   switch (action.type) {
-    case FOOBAR:
-        return state;
+    case SET_COUNTER_VALUE:
+        return action.value;
       break;
     default:
       return state;
@@ -12,7 +12,7 @@ const base = (state = {}, action) => {
 }
 
 const app = combineReducers({
-  base
+  counterValue
 })
 
 export default app

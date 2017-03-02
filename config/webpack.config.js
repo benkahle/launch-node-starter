@@ -8,7 +8,7 @@ const extractSassPlugin = new ExtractTextPlugin({
 });
 const copyWebpackPlugin = new CopyWebpackPlugin([
   {
-    context: "./src/static",
+    context: "./src/public",
     from: "**/*"
   }
 ]);

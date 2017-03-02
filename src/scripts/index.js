@@ -9,7 +9,7 @@ import thunkMiddleware from 'redux-thunk'
 import persistState from 'redux-localstorage'
 
 import rootReducer from './reducers'
-import App from './components/App'
+import AppRouter from './components/AppRouter'
 
 const loggerMiddleware = createLogger();
 const debouncer = createDebounce();
@@ -29,7 +29,7 @@ const store = createPersistantStore(
 
 render(
   <Provider store={store}>
-    <App/>
+    <AppRouter/>
   </Provider>,
   document.getElementById('root')
 )

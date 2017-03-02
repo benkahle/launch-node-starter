@@ -1,8 +1,8 @@
-export const FOOBAR = "FOOBAR"
+export const SET_COUNTER_VALUE = "SET_COUNTER_VALUE"
 
-export const foobar = (data) => {
+export const setCounterValue = (value) => {
   return {
-    type: FOOBAR,
-    data: data
+    type: SET_COUNTER_VALUE,
+    value: value
   }
 }

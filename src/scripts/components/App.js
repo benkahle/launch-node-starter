@@ -1,25 +1,25 @@
-import React, {Component} from 'react'
-import { render } from 'react-dom'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
-
-import CounterContainer from '../containers/CounterContainer'
-import Home from './Home'
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+require("../../styles/app.scss");
 
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.router = (
-      <Router history={browserHistory}>
-        <Route path="/" component={Home}>
-          {/* <Route component={CounterContainer}/> */}
-        </Route>
-      </Router>
-    );
   }
   render() {
-    return this.router
+    return (
+      <div>
+        <h1>React Redux Starter Kit</h1>
+        <ul role="nav" className="nav">
+          <li><Link to="/" activeClassName="active-link" onlyActiveOnIndex={true}>Home</Link></li>
+          <li><Link to="/counter" activeClassName="active-link">Counter</Link></li>
+        </ul>
+
+        {this.props.children}
+
+      </div>
+    )
   }
 }
 
-export default App;
+export default App
