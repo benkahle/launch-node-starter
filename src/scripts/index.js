@@ -15,7 +15,7 @@ const loggerMiddleware = createLogger();
 const debouncer = createDebounce();
 
 const createPersistantStore = compose(
-  persistState("user")
+  persistState()
 )(createStore);
 
 const store = createPersistantStore(
