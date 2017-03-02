@@ -21,14 +21,12 @@ module.exports = {
   },
   devtool: 'cheap-module-source-map',
   module: {
-    loaders: [
+    rules: [
       {
         test: /.js?$/,
         loader: 'babel-loader',
         exclude: /node_modules/
-      }
-    ],
-    rules: [
+      },
       {
         test: /.scss$/,
         loader: extractSassPlugin.extract({
