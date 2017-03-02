@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.config.js --history-api-fallback --progress --colors",
-    "build": "NODE_ENV=production ./node_modules/.bin/webpack --config ./config/webpack.config.js --progress --colors -p",
+    "build": "npm run clean && NODE_ENV=production ./node_modules/.bin/webpack --config ./config/webpack.config.js --progress --colors -p",
     "clean": "rm -r ./build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
