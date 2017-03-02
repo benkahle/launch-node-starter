@@ -2,34 +2,23 @@ import React, {Component} from 'react'
 import { render } from 'react-dom'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
+import CounterContainer from '../containers/CounterContainer'
+import Home from './Home'
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.requireAuth = this.requireAuth.bind(this);
 
     this.router = (
-      <Router history={this.props.history}>
-        <Route path="/" component={}>
-          <IndexRoute component={} onEnter={this.requireAuth}/>
+      <Router history={browserHistory}>
+        <Route path="/" component={Home}>
+          {/* <Route component={CounterContainer}/> */}
         </Route>
       </Router>
     );
   }
-
-  requireAuth(nextState, replace) {
-    if (!this.props.user.id) {
-      replace({
-        pathname: '/login',
-      });
-    }
-  }
-
   render() {
-    return (
-      <MuiThemeProvider muiTheme={muiTheme}>
-        {this.router}
-      </MuiThemeProvider>
-    )
+    return this.router
   }
 }
 
