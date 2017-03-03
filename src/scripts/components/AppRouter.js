@@ -14,7 +14,7 @@ class AppRouter extends Component {
       <Router history={browserHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={Home}/>
-          <Route path="counter" component={CounterContainer}/>
+          <Route path="/counter" component={CounterContainer}/>
         </Route>
       </Router>
     )

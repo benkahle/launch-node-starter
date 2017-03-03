@@ -4,8 +4,6 @@ require("../../styles/counter.scss");
 export default class Counter extends Component {
   constructor(props) {
     super(props)
-    // this.increment = this.increment.bind(this);
-    // this.decrement = this.decrement.bind(this);
   }
 
   increment() {
