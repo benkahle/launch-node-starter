@@ -1,0 +1,14 @@
+.list-item {
+  background: rgba(0,0,0,0.1);
+  padding: 5px;
+
+  p {
+    font-size: 12px;
+    font-style: italic;
+    margin: 0;
+  }
+  .highlight {
+    font-weight: bold;
+    font-size: 14px;
+  }
+}

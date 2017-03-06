@@ -13,6 +13,7 @@ class App extends Component {
         <ul role="nav" className="nav">
           <li><Link to="/" activeClassName="active-link" onlyActiveOnIndex={true}>Home</Link></li>
           <li><Link to="/counter" activeClassName="active-link">Counter</Link></li>
+          <li><Link to="/list" activeClassName="active-link">Filtered List</Link></li>
         </ul>
 
         {this.props.children}

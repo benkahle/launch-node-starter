@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import App from './App'
 import Home from './Home'
 import CounterContainer from '../containers/CounterContainer'
+import FilteredListContainer from '../containers/FilteredListContainer'
 
 class AppRouter extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class AppRouter extends Component {
         <Route path="/" component={App}>
           <IndexRoute component={Home}/>
           <Route path="/counter" component={CounterContainer}/>
+          <Route path="/list" component={FilteredListContainer}/>
         </Route>
       </Router>
     )
