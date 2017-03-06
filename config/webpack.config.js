@@ -1,6 +1,9 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const merge = require('webpack-merge');
+
+const TARGET = process.env.npm_lifecycle_event;
 
 const extractSassPlugin = new ExtractTextPlugin({
     filename: "style.css", //Output css for production
@@ -13,22 +16,21 @@ const copyWebpackPlugin = new CopyWebpackPlugin([
   }
 ]);
 
-module.exports = {
-  entry: './src/scripts/index.js',
+const common = {
+  entry: {
+    main: './src/scripts/index.js'
+  },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '../build')
   },
-  devtool: 'cheap-module-source-map',
   module: {
-    loaders: [
+    rules: [
       {
         test: /.js?$/,
         loader: 'babel-loader',
         exclude: /node_modules/
-      }
-    ],
-    rules: [
+      },
       {
         test: /.scss$/,
         loader: extractSassPlugin.extract({
@@ -41,10 +43,21 @@ module.exports = {
           fallback: "style-loader" //inline style for development
         })
       }
-    ]
+    ],
   },
   plugins: [
     copyWebpackPlugin,
     extractSassPlugin
   ]
 };
+
+if(TARGET === 'start') {
+  module.exports = merge.smart(common, {
+    devtool: 'cheap-module-source-map'
+  });
+} else if(TARGET === 'build') {
+  module.exports = merge.smart(common, {
+    cache: true,
+    devtool: 'inline-source-map'
+  });
+}
